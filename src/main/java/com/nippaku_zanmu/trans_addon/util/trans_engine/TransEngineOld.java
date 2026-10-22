@@ -39,6 +39,15 @@ public  class TransEngineOld extends AbstractTransEngine {
     }
 
     @Override
+    public String getSettingNameKey(Module module, String groupName, String settingName) {
+        builder.reset();
+        return builder.module(module)
+            .append("setting")
+            .append(groupName)
+            .end(settingName);
+    }
+
+    @Override
     public String getSettingDesKey(Module module, SettingGroup group, Setting s) {
         String settingName = s.name;
         builder.reset();
@@ -49,5 +58,15 @@ public  class TransEngineOld extends AbstractTransEngine {
             .end("description")
             ;
         return  key;
+    }
+
+    @Override
+    public String getSettingDesKey(Module module, String groupName, String settingName) {
+        builder.reset();
+        return builder.module(module)
+            .append("setting")
+            .append(groupName)
+            .append(settingName)
+            .end("description");
     }
 }

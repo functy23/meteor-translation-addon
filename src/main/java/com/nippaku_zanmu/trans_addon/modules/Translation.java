@@ -48,7 +48,7 @@ public class Translation extends Module {
 
     public final Setting<String> sSetDumpPath = sgDev.add(new StringSetting.Builder()
         .name("dump-path")
-        .defaultValue("D:\\hack\\Misc\\meteor-translation-addon\\test\\en_us.json")
+        .defaultValue("meteor-translation-addon/dump/en_us.json")
         .build());
 
     public final Setting<Boolean> bSetDumpText = sgDev.add(new BoolSetting.Builder()

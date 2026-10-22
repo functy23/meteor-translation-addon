@@ -22,6 +22,18 @@ public class TransUtil {
         return trans;
     }
 
+    /**
+     * 依次尝试多个 key，返回第一个有翻译的结果，全部没有翻译时返回 alternative
+     */
+    public static String transAny(String alternative, String... keys) {
+        for (String key : keys) {
+            if (key == null) continue;
+            String trans = trans(key);
+            if (!trans.equals(key)) return trans;
+        }
+        return alternative;
+    }
+
     public static Set<String> getAddonNames() {
         return AddonManager.ADDONS.stream().map(addon -> addon.name).map(TransUtil::baseFormat).collect(Collectors.toSet());
     }

@@ -9,4 +9,6 @@ public interface IKeyGenerate {
     String getModuleDescriptionKey(Module m);
     String getSettingNameKey(Module module, SettingGroup group, Setting<?> s);
     String getSettingDesKey(Module module, SettingGroup group, Setting<?> s);
+    String getSettingNameKey(Module module, String groupName, String settingName);
+    String getSettingDesKey(Module module, String groupName, String settingName);
 }
